@@ -21,4 +21,10 @@ if num == 5 and num2 == 5 {
 else {
   print("Not equal");
 }
+
+func say(word) {
+  print(word);
+};
+
+say('hello');
 ```
