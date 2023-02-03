@@ -105,8 +105,8 @@ def read_source_file(path):
     if os.path.isfile(path):
         return open(path, 'r').read()
     # Try with implied extension
-    if os.path.isfile(path + '.soul'):
-        return open(path + '.soul', 'r').read()
+    if os.path.isfile(path + '.cm'):
+        return open(path + '.cm', 'r').read()
     # No such file
     raise Exception(f'No source file named {path} could be found!')
 
