@@ -118,7 +118,7 @@ class Lexer:
         self.kws['input'] = TokenKind.INPUT
         self.kws['func'] = TokenKind.FUNC
         self.kws['return'] = TokenKind.RETURN
-        self.kws['soul'] = TokenKind.RUN
+        self.kws['rang'] = TokenKind.RUN
         self.kws['import'] = TokenKind.RUN
         self.kws['alg'] = TokenKind.ALGEBRA
         self.kws['@'] = TokenKind.ALC
