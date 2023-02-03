@@ -311,13 +311,13 @@ class Run(AST):
         return self.file
     def eval(self, state, subject):
         if self.c == None:
-            f = open(str(self.file)+'.soul', 'r')
+            f = open(str(self.file)+'.cm', 'r')
             inpt = f.read()
             f.close()
             ast = sparser.Parser(Lexer(inpt)).parse_statements()
             return ast.eval(state, subject)
         elif self.c != None:
-            f = open(str(self.file)+'.soul', 'r')
+            f = open(str(self.file)+'.cm', 'r')
             inpt = f.read()
             f.close()
             start = time.time()
