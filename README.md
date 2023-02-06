@@ -22,3 +22,8 @@ else {
   print("Not equal");
 }
 ```
+
+# Goals
+1. Make a package manager
+2. Make it famous
+# 3. Make Github add this programming language
