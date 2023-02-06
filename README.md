@@ -22,6 +22,8 @@ else {
   print("Not equal");
 }
 ```
+# Package manager
+C- package management made easy! Just visit: https://github.com/Rayan25062011/cmp
 
 # Goals
 1. Make a package manager
