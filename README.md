@@ -37,20 +37,6 @@ class Main()
 }
 
 ```
-Or some more complex actions like:
-```
-include otherFile;
-
-class Main() 
-{
-    function main() 
-    {
-       printHello = Hello();
-       printHello.PRINT();
-    }
-}
-
-```
 
 # Goals
 1. Make a package manager
