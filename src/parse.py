@@ -49,7 +49,7 @@ class Parser:
                 if word == "include" and not self.IsInString(word, line):
                     includeName = words[wordNo + 1]
                     code = code.replace(line, "")
-                    with open(includeName.removesuffix(";") + ".cb", "r") as file:
+                    with open(includeName.removesuffix(";") + ".cm", "r") as file:
                         code = file.read() + "\n" + code
         for line in code.splitlines():
             if "from native reference " in line:
