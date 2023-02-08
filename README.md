@@ -11,16 +11,16 @@ C- is a language heavily inspired by C and C++, but more simple
 Tired of C? Use C-!
 
 # examples
-```js
-var num = 5;
-var num2 = 5;
-
-if num == 5 and num2 == 5 {
-  print("num and num2 are both equal to 5!");
-};
-else {
-  print("Not equal");
+```c
+class Main()
+{
+    function Main()
+    {
+        //Here is a comment!
+        print("Hello World");
+    }
 }
+
 ```
 # Package manager
 Package management made easy! Just visit: https://github.com/Rayan25062011/cmp
