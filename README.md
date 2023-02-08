@@ -11,7 +11,7 @@ C- is a language heavily inspired by C and C++, but more simple
 Tired of C? Use C-!
 
 # examples
-```c
+```cpp
 class Main()
 {
     function Main()
