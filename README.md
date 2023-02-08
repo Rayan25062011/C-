@@ -27,6 +27,7 @@ Or simple available with <a href="https://github.com/Rayan25062011/cmp">cmp</a>
 
 # examples
 ```cpp
+// example.cm
 class Main()
 {
     function helloworld()
