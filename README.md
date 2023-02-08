@@ -23,6 +23,7 @@ cd src
 ```
 python3 interpreter.py example.cm
 ```
+Or simple available with <a href="https://github.com/Rayan25062011/cmp">cmp</a>
 
 # examples
 ```cpp
