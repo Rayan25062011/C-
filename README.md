@@ -14,11 +14,11 @@ Tired of C? Use C-!
 ```cpp
 class Main()
 {
-    function Main()
+    function helloworld()
     {
-        //Here is a comment!
         print("Hello World");
     }
+    helloworld();
 }
 
 ```
