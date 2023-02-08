@@ -2,7 +2,7 @@
 
 
 # C-
-The C- programming language
+The C- programming language version 0.1.3
 
 # Why
 C- is a language heavily inspired by C and C++, but more simple
