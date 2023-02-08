@@ -10,6 +10,20 @@ C- is a language heavily inspired by C and C++, but more simple
 # Why should you use it
 Tired of C? Use C-!
 
+# Get Started
+```
+git clone https://github.com/Rayan25062011/C-
+```
+```
+chmod +x src
+```
+```
+cd src
+```
+```
+python3 interpreter.py example.cm
+```
+
 # examples
 ```cpp
 class Main()
@@ -18,12 +32,9 @@ class Main()
     {
         print("Hello World");
     }
-    helloworld();
 }
 
 ```
-# Package manager
-Package management made easy! Just visit: https://github.com/Rayan25062011/cmp
 
 # Goals
 1. Make a package manager
