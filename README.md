@@ -37,6 +37,8 @@ class Main()
 }
 
 ```
+# !!!NOTICE!!!
+EVERY C- file needs to implement a CLASS "Main" and a function "Main" to wrap up your code, if it does not have them then your code Will fail.
 
 # Goals
 1. Make a package manager
