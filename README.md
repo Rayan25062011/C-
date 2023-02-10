@@ -36,7 +36,7 @@ class Main
         dump(r.text);
     }
 
-    public static fn main()
+    public static void main()
     {
         this.getWeather();
     }
