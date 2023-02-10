@@ -1,4 +1,0 @@
-
-class Main() {
-  print("hello from C-!");
-}
