@@ -1,0 +1,14 @@
+from modules use os;
+
+class OSM
+{
+    fn run(command)
+    {
+        os.system(command);
+    }
+    
+    fn name()
+    {
+        dump(os.name);
+    }
+}
