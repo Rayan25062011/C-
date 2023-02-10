@@ -11,18 +11,11 @@ C- is a language heavily inspired by C and C++, but more simple
 Tired of C? Use C-!
 
 # Get Started
-```
-git clone https://github.com/Rayan25062011/C-
-```
-```
-chmod +x src
-```
-```
-cd src
-```
-```
-python3 interpreter.py example.cm
-```
+> git clone https://github.com/Rayan25062011/C-
+> chmod +x src
+> cd src
+> python3 interpreter.py example.cm
+
 Or simply available with <a href="https://github.com/Rayan25062011/cmp">cmp</a>
 
 # examples
