@@ -1,17 +1,17 @@
 ![image](https://user-images.githubusercontent.com/101386337/216001801-f7f64f67-6841-4d39-ab9c-7f2cc66970c6.jpeg) 
 
-<img alt="GitHub" src="https://img.shields.io/github/license/Rayan25062011/C-">
+<img alt="GitHub" src="https://img.shields.io/github/license/Rayan25062011/C-"> <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Rayan25062011/C-">
 
 # C-
 The C- programming language version 0.3.5
 
-# Why
+## Why
 C- is a language heavily inspired by C, python, and java, but simpler.
 
 # Why should you use it
-Tired of C? Use C-!
+Tired of C? Use ***C-***!
 
-# Get Started
+## Get Started
 > git clone https://github.com/Rayan25062011/C-
 > 
 > chmod +x src
