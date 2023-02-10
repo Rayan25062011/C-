@@ -42,10 +42,12 @@ class Main
 }
 
 ```
-# !!!NOTICE!!!
-EVERY C- file needs to implement a CLASS "Main" to wrap up the code.
+###### !!!NOTICE!!!
+***EVERY C- file needs to implement a CLASS "Main" to wrap up the code.***
 
-# Goals
+###### Goals
+<sub> 
 1. Make a package manager
 2. Make it famous
 3. Make Github add this programming language
+</sub>
