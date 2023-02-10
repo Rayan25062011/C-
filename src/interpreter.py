@@ -16,7 +16,7 @@ except ImportError:
 from parse import Parser
 from error import Error
 
-version = "0.0.1"
+version = "0.3.5"
 
 class Interpreter:
     def Interpret(self, code : str) -> None:
