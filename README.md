@@ -6,7 +6,7 @@
 The C- programming language version 0.3.5
 
 ## Why
-C- is a language heavily inspired by C, python, and java, but simpler.
+C- is a language heavily inspired by C++, python, and java, but simpler.
 
 # Why should you use it
 Tired of C? Use ***C-***!
