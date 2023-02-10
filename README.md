@@ -29,13 +29,19 @@ Or simply available with <a href="https://github.com/Rayan25062011/cmp">cmp</a>
 ```cpp
 // all python modules available and the built-in modules
 from modules use requests;
-class Main()
+
+class Main
 {
-    fn api()
+    fn getWeather()
     {
-        print("Getting weather...");
-        r = requests.get("wttr.in")
-        r.content;
+        city = scan("Which country do you want? > ");
+        r = requests.get(f"https://wttr.in/{city}");
+        dump(r.text);
+    }
+
+    public static void main()
+    {
+        this.getWeather();
     }
 }
 
