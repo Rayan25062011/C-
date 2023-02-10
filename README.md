@@ -5,7 +5,7 @@
 The C- programming language version 0.1.3
 
 # Why
-C- is a language heavily inspired by C and C++, but more simple
+C- is a language heavily inspired by C, python, and java, but simpler.
 
 # Why should you use it
 Tired of C? Use C-!
@@ -21,7 +21,7 @@ Tired of C? Use C-!
 
 Or simply available with <a href="https://github.com/Rayan25062011/cmp">cmp</a>
 
-# examples
+###### examples
 ```java
 // all python modules available and the built-in modules
 from modules use requests;
@@ -42,7 +42,7 @@ class Main
 }
 
 ```
-###### !!!NOTICE!!!
+## !!!NOTICE!!!
 ***EVERY C- file needs to implement a CLASS "Main" to wrap up the code.***
 
 ###### Goals
@@ -51,3 +51,5 @@ class Main
 2. Make it famous
 3. Make Github add this programming language
 </sub>
+
+
