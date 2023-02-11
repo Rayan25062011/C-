@@ -27,7 +27,7 @@ Or simply available with <a href="https://github.com/Rayan25062011/cmp">cmp</a>
 // all python modules available and the built-in modules
 from modules use requests;
 
-public class Main
+class Main
 {
     fn getWeather()
     {
