@@ -30,6 +30,6 @@ setup(
   classifiers=classifiers,
   keywords='cm, c-, cminus', 
   packages=find_packages(),
-  install_requires= ['time', 'os', 'sys'],
+  install_requires= ['shutil', 'os', 'sys', 'subprocess', 'error'],
   python_requires='>=3.6'
 )
