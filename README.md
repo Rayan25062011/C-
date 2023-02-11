@@ -27,7 +27,7 @@ Or simply available with <a href="https://github.com/Rayan25062011/cmp">cmp</a>
 // all python modules available and the built-in modules
 from modules use requests;
 
-class Main
+public class Main
 {
     fn getWeather()
     {
@@ -36,7 +36,7 @@ class Main
         dump(r.text);
     }
 
-    public static void main()
+    fn main()
     {
         this.getWeather();
     }
