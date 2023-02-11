@@ -33,7 +33,7 @@ public class Main
     {
         city = scan("Which country do you want? > ");
         r = requests.get(f"https://wttr.in/{city}");
-        dump(r.text);
+        println(r.text);
     }
 
     fn main()
