@@ -18,7 +18,7 @@ Tired of C? Use ***C-***!
 > 
 > cd src
 > 
-> python3 interpreter.py example.cm
+> python3 interpreter.py -r example.cm
 
 Or simply available with <a href="https://github.com/Rayan25062011/cmp">cmp</a>
 
