@@ -31,17 +31,9 @@ class Main
 {
     fn getWeather()
     {
-    
-        do 
-        {
             city = scan("Which country do you want? > ");
             r = requests.get(f"https://wttr.in/{city}");
             println(r.text);
-        }
-        catch 
-        {
-            println("Opps! Error!");
-        }
     }
 
     fn main()
