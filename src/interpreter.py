@@ -1,10 +1,11 @@
-#Native
+# Created on iPad
+
 import os.path
 import subprocess
 import sys
 import shutil
 
-#PyPy
+
 pyInstallerInstalled = True
 
 try:
@@ -12,7 +13,7 @@ try:
 except ImportError:
     pyInstallerInstalled = False
 
-#Custom
+
 from parse import Parser
 from error import Error
 
