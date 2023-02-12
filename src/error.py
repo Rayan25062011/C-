@@ -1,3 +1,5 @@
+# Created on iPad
+
 import sys
 class Error():
     def __init__(self, error) -> None:
