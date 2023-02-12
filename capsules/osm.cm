@@ -1,4 +1,4 @@
-from modules use os;
+from native use os;
 
 class OSM
 {
@@ -9,6 +9,6 @@ class OSM
     
     fn name()
     {
-        dump(os.name);
+        println(os.name);
     }
 }
