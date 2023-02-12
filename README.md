@@ -29,16 +29,9 @@ from modules use requests;
 
 class Main
 {
-    fn getWeather()
-    {
-            city = scan("Which country do you want? > ");
-            r = requests.get(f"https://wttr.in/{city}");
-            println(r.text);
-    }
-
     fn main()
     {
-        this.getWeather();
+        println("Hello from C-!");
     }
 }
 
