@@ -40,7 +40,7 @@ class Parser:
             words = line.split()
             for wordNo, word in enumerate(words):
                 if words[wordNo] == "from" and not self.IsInString(words[wordNo], line):
-                    if words[wordNo + 1]== "modules":
+                    if words[wordNo + 1]== "native":
                         if words[wordNo + 2] == "require":
                             words[wordNo] = f"from {words[wordNo + 3]} import *"
         for line in code.splitlines():
@@ -52,15 +52,15 @@ class Parser:
                     with open(includeName.removesuffix(";") + ".cm", "r") as file:
                         code = file.read() + "\n" + code
         for line in code.splitlines():
-            if "from modules use " in line:
-                if self.IsInString("from modules use ", line, True):
+            if "from native use " in line:
+                if self.IsInString("from native use ", line, True):
                     continue
-                code = code.replace(line, line.replace("from modules use ", "import "))
+                code = code.replace(line, line.replace("from native use ", "import "))
                 words = line.split()
                 newLine = ""
                 for wordNo, word in enumerate(words):
                     if words[wordNo] == "from" and not self.IsInString(words[wordNo], line):
-                        if words[wordNo + 1] == "modules":
+                        if words[wordNo + 1] == "native":
                             if words[wordNo + 2] == "use":
                                 words[wordNo] = "import"
                                 words[wordNo] = ""
