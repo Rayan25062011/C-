@@ -1,5 +1,5 @@
 ## Under development
-C- is still under development and some syntax changing might appear, right now we are currently working on an easier syntax that will help you a lot, please take this into consideration
+C- is still under development and some syntax changing might appear, right now we are currently working on a huge syntax update that will help you a lot, please take this into consideration
 
 ![image](https://user-images.githubusercontent.com/101386337/216001801-f7f64f67-6841-4d39-ab9c-7f2cc66970c6.jpeg) 
 
