@@ -1,3 +1,6 @@
+## Under development
+C- is still under development and some syntax changing might appear, right now we are currently working on an easier syntax that will help you a lot, please take this into consideration
+
 ![image](https://user-images.githubusercontent.com/101386337/216001801-f7f64f67-6841-4d39-ab9c-7f2cc66970c6.jpeg) 
 
 <img alt="GitHub" src="https://img.shields.io/github/license/Rayan25062011/C-"> <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Rayan25062011/C-">  <img alt="Website" src="https://img.shields.io/website?down_color=lightgrey&down_message=down&up_color=green&up_message=online&url=https%3A%2F%2Frayan25062011.github.io%2FOffical-Cminus-Site%2F">
