@@ -52,3 +52,4 @@ class Main
 ## FAQ
 C- was first released on the ***28th January 2023*** and since then, we kept updating for user's to enjoy and use the language very easily, we keep track of the repository 4 times a day to make a sure you are a having an appreciatable time while coding with our language. C- has the soul purpose to help you with automation, software, server creation and all kinds of cyber-security.
 
+<img src="https://forthebadge.com/images/badges/built-with-love.svg"></img>
