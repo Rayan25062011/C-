@@ -25,11 +25,11 @@ Tired of C? Use ***C-***!
 Or simply available with <a href="https://github.com/Rayan25062011/cmp">cmp</a>
 
 ###### examples
-```java
+```cm
 
 class Main
 {
-    fn main()
+    function main()
     {
         println("Hello from C-!");
     }
