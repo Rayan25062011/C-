@@ -1,6 +1,8 @@
 
-<img src="C.png"></img>
-
+<img src="C.png" 
+     width="500" 
+     height="500"
+     align="middle"/>
 
 ---
 <img alt="GitHub" src="https://img.shields.io/github/license/Rayan25062011/C-"> <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Rayan25062011/C-">  <img alt="Website" src="https://img.shields.io/website?down_color=lightgrey&down_message=down&up_color=green&up_message=online&url=https%3A%2F%2Frayan25062011.github.io%2FOffical-Cminus-Site%2F">
