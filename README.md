@@ -28,13 +28,27 @@ Tired of C? Use ***C-***!
 Or simply available with <a href="https://github.com/Rayan25062011/cmp">cmp</a>
 
 ###### examples
-```cm
+```cpp
+
+from native use sys;
 
 class Main
 {
     function main()
     {
-        println("Hello from C-!");
+        #define c = 6;
+        #static c;
+        if (c + a == 8)
+        {
+            println("c + a equals 8");
+        }
+        a = 2;
+        b = 2;
+        if (a + b == 4)
+        {
+            println("a + b equals 4");
+            sys::exit();
+        }
     }
 }
 
