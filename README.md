@@ -36,8 +36,8 @@ class Main
 {
     function main()
     {
-        #define c = 6;
         #static c;
+        c = 6;
         if (c + a == 8)
         {
             println("c + a equals 8");
