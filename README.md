@@ -37,6 +37,7 @@ class Main
     function main()
     {
         #static c;
+        
         c = 6;
         if (c + a == 8)
         {
