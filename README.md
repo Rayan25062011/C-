@@ -53,9 +53,7 @@ class Main
 }
 
 ```
-<img src="ExampleImage.jpg" 
-     width="600" 
-     height="500" />
+
 ## !!!NOTICE!!!
 ***EVERY C- file needs to implement a CLASS "Main" to wrap up the code.***
 
