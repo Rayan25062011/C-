@@ -1,0 +1,16 @@
+
+LBRACE: {
+RBRACE: }
+
+STATEMENTS: if|else|and|or|not|for|break|continue
+KEYWORKS: null|this|true|false|else if|break|continue|scanln|static|
+
+LPAREN: (
+RPAREN: )
+
+EOL: function|while|for|if|else|else if|with|from
+SEMICOLON: ;
+CLASS: class
+
+PRINT: println
+COMMENT: //
