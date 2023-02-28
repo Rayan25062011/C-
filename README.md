@@ -1,7 +1,7 @@
 
-<img src="CM.png" 
-     width="500" 
-     height="500"
+<img src="C 5.png" 
+     width="300" 
+     height="300"
      align="middle"/>
 
 ---
