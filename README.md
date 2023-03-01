@@ -1,8 +1,9 @@
 
-<img src="C 5.png" 
-     width="300" 
-     height="300"
-     align="middle"/>
+<p align="center">
+  <img src="C 5.png" width="300">
+  <h1 align="center">C-</h1>
+  <p align="center">The C- programming language</p>
+</p>
 
 ---
 <img alt="GitHub" src="https://img.shields.io/github/license/Rayan25062011/C-"> <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Rayan25062011/C-">  <img alt="Website" src="https://img.shields.io/website?down_color=lightgrey&down_message=down&up_color=green&up_message=online&url=https%3A%2F%2Frayan25062011.github.io%2FOffical-Cminus-Site%2F">
