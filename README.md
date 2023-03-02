@@ -41,11 +41,12 @@ class Main
         #static c;
         
         c = 6;
+        a = 2;
+
         if (c + a == 8)
         {
             println("c + a equals 8");
         }
-        a = 2;
         b = 2;
         if (a + b == 4)
         {
