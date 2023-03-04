@@ -51,6 +51,10 @@ class Main
         if (a + b == 4)
         {
             println("a + b equals 4");
+            #free a;
+            #free b;
+            #free c;
+            
             #quit;
         }
     }
