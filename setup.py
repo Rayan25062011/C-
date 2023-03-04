@@ -2,10 +2,6 @@ from sys import argv
 from setuptools import setup, find_packages
 
 
-if argv[1] in ('install', 'build', 'sdist', 'bdist_wheel'):
-  pass #will add file assoc soon  
-
- 
 classifiers = [
   'Intended Audience :: Developers',
   'Operating System :: OS Independent',
