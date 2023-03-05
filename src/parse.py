@@ -25,13 +25,12 @@ class Parser:
      
     def ParseComments(self, code: str) -> str:
         for line in code.splitlines():
-            if "//" in line: 
-                if not self.IsInString("//", line):
-                    if list(line)[0] == "/" and list(line)[1] == "/":
-                        code = code.replace(line, "")
-                    else:
-                        newLine = line.partition("//")[0]
-                        code = code.replace(line, newLine)                    
+            if "//" in line and not self.IsInString("//", line):
+                if list(line)[0] == "/" and list(line)[1] == "/":
+                    code = code.replace(line, "")
+                else:
+                    newLine = line.partition("//")[0]
+                    code = code.replace(line, newLine)
         return code
 
     def ParseInclude(self, code: str) -> str:
@@ -39,10 +38,13 @@ class Parser:
         for line in code.splitlines():
             words = line.split()
             for wordNo, word in enumerate(words):
-                if words[wordNo] == "from" and not self.IsInString(words[wordNo], line):
-                    if words[wordNo + 1]== "native":
-                        if words[wordNo + 2] == "include":
-                            words[wordNo] = f"from {words[wordNo + 3]} import *"
+                if (
+                    words[wordNo] == "from"
+                    and not self.IsInString(words[wordNo], line)
+                    and words[wordNo + 1] == "native"
+                    and words[wordNo + 2] == "include"
+                ):
+                    words[wordNo] = f"from {words[wordNo + 3]} import *"
         for line in code.splitlines():
             words = line.split()
             for wordNo, word in enumerate(words):
@@ -59,47 +61,16 @@ class Parser:
                 words = line.split()
                 newLine = ""
                 for wordNo, word in enumerate(words):
-                    if words[wordNo] == "from" and not self.IsInString(words[wordNo], line):
-                        if words[wordNo + 1] == "native":
-                            if words[wordNo + 2] == "use":
-                                words[wordNo] = "import"
-                                words[wordNo] = ""
-                                words[wordNo + 2] = ""
-                                newLine = " ".join(words)
-                if newLine != "":
-                    code = code.replace(line, newLine)
-
-        return code
-        for line in code.splitlines():
-            words = line.split()
-            for wordNo, word in enumerate(words):
-                if words[wordNo] == "from" and not self.IsInString(words[wordNo], line):
-                    if words[wordNo + 1]== "native":
-                        if words[wordNo + 2] == "include":
-                            words[wordNo] = f"from {words[wordNo + 3]} import *"
-        for line in code.splitlines():
-            words = line.split()
-            for wordNo, word in enumerate(words):
-                if word == "include" and not self.IsInString(word, line):
-                    includeName = words[wordNo + 1]
-                    code = code.replace(line, "")
-                    with open(includeName.removesuffix(";") + ".cm", "r") as file:
-                        code = file.read() + "\n" + code
-        for line in code.splitlines():
-            if "from native use " in line:
-                if self.IsInString("from native use ", line, True):
-                    continue
-                code = code.replace(line, line.replace("from native use ", "import "))
-                words = line.split()
-                newLine = ""
-                for wordNo, word in enumerate(words):
-                    if words[wordNo] == "from" and not self.IsInString(words[wordNo], line):
-                        if words[wordNo + 1] == "native":
-                            if words[wordNo + 2] == "use":
-                                words[wordNo] = "import"
-                                words[wordNo] = ""
-                                words[wordNo + 2] = ""
-                                newLine = " ".join(words)
+                    if (
+                        words[wordNo] == "from"
+                        and not self.IsInString(words[wordNo], line)
+                        and words[wordNo + 1] == "native"
+                        and words[wordNo + 2] == "use"
+                    ):
+                        words[wordNo] = "import"
+                        words[wordNo] = ""
+                        words[wordNo + 2] = ""
+                        newLine = " ".join(words)
                 if newLine != "":
                     code = code.replace(line, newLine)
 
@@ -140,18 +111,17 @@ class Parser:
                 lineChars = list(line)
                 stringCount = 0
                 for i in range(len(lineChars)):
-                    if lineChars[i] == '"' or lineChars[i] == "'":
+                    if lineChars[i] in ['"', "'"]:
                         stringCount += 1
-                    if lineChars[i] == ";":
-                        if stringCount % 2 == 0:
-                            lineChars[i] = "\n"
-                            break
+                    if lineChars[i] == ";" and stringCount % 2 == 0:
+                        lineChars[i] = "\n"
+                        break
 
             elif line.endswith((":")):
                 Error(f"Syntax error in: \n{line}")
             if "namespace" in line and not line.endswith((";")):
                 pass
-            if not "namespace" in line and not line.endswith((";")):
+            if "namespace" not in line and not line.endswith((";")):
                 Error(f"Missing semicolon: \n{line}")
             if line.endswith((":")):
                 Error(f"Syntax error in: \n{line}")
@@ -164,25 +134,31 @@ class Parser:
             if "{" in line:
                 lineChars = list(line)
                 stringCount = 0
-                for i in range(len(lineChars)):
-                    if lineChars[i] == '"' or lineChars[i] == "'":
+                for lineChar in lineChars:
+                    if lineChar in ['"', "'"]:
                         stringCount += 1
-                    if lineChars[i] == "{":
-                        if stringCount % 2 == 0 and stringCount != 0:
-                            leftBracesAmount += 1
-                            break
+                    if (
+                        lineChar == "{"
+                        and stringCount % 2 == 0
+                        and stringCount != 0
+                    ):
+                        leftBracesAmount += 1
+                        break
         rightBracesAmount = 0
         for line in code.splitlines():
             if "}" in line:
                 lineChars = list(line)
                 stringCount = 0
-                for i in range(len(lineChars)):
-                    if lineChars[i] == '"' or lineChars[i] == "'":
+                for lineChar_ in lineChars:
+                    if lineChar_ in ['"', "'"]:
                         stringCount += 1
-                    if lineChars[i] == "}":
-                        if stringCount % 2 == 0 and stringCount != 0:
-                            rightBracesAmount += 1
-                            break
+                    if (
+                        lineChar_ == "}"
+                        and stringCount % 2 == 0
+                        and stringCount != 0
+                    ):
+                        rightBracesAmount += 1
+                        break
 
         if leftBracesAmount != rightBracesAmount:
             Error(("Braces amount is not equal"))
@@ -194,31 +170,33 @@ class Parser:
                 lineChars = list(line)
                 stringCount = 0
                 for i in range(len(lineChars)):
-                    if lineChars[i] == '"' or lineChars[i] == "'":
+                    if lineChars[i] in ['"', "'"]:
                         stringCount += 1
-                    if lineChars[i] == ";":
-                        if stringCount % 2 == 0:
-                            lineChars[i] = "\n"
-                            break
+                    if lineChars[i] == ";" and stringCount % 2 == 0:
+                        lineChars[i] = "\n"
+                        break
                 line = "".join(lineChars)
-            if "class" in line:
-                if not self.IsInString("class", line):
-                    line = "\n"+" ".join(line.split())
-            if "function" in line:
-                if line.partition("function")[0].count("\"") != 0 and line.partition("function")[0].count("\"") % 2 == 0:
-                    words = line.split()
-                    for wordNo, word in enumerate(words):
-                        if word == "function":
-                            speechCount = line.partition("function")[2].count("\"")
-                            otherCount = line.partition("function")[2].count("'")
-                            if speechCount % 2 == 0 and otherCount % 2 == 0:
-                                words[wordNo] = "def"
-                                break
-                    line = " ".join(words)
+            if "class" in line and not self.IsInString("class", line):
+                line = "\n"+" ".join(line.split())
+            if (
+                "function" in line
+                and line.partition("function")[0].count("\"") != 0
+                and line.partition("function")[0].count("\"") % 2 == 0
+            ):
+                words = line.split()
+                for wordNo, word in enumerate(words):
+                    if word == "function":
+                        speechCount = line.partition("function")[2].count("\"")
+                        otherCount = line.partition("function")[2].count("'")
+                        if speechCount % 2 == 0 and otherCount % 2 == 0:
+                            words[wordNo] = "def"
+                            break
+                line = " ".join(words)
             leftBraceExpression = ''.join(line.split())
-            if not self.IsInString("{", leftBraceExpression):
-                if ''.join(line.split()).startswith(("{")):
-                    newCode += ":\n"
+            if not self.IsInString("{", leftBraceExpression) and ''.join(
+                line.split()
+            ).startswith(("{")):
+                newCode += ":\n"
             if not self.IsInString("}", line):
                     line = line.replace("}", "#endindent")
             if not self.IsInString("{", line):
@@ -260,9 +238,8 @@ class Parser:
             if ") is" in line and not self.IsInString(") is", line):
                 code = code.replace(line, line.replace(") is", ") ->"))
         for line in code.splitlines():
-            if "def" in line:
-                if (line.partition("def")[0].strip() == ""):
-                    code = code.replace(line, line.replace("(", "(self,"))
+            if "def" in line and (line.partition("def")[0].strip() == ""):
+                code = code.replace(line, line.replace("(", "(self,"))
         if UnboundLocalError:
             print("Variable does not exist or was referenced before asignment.")
         return code
@@ -271,11 +248,9 @@ class Parser:
         splitLines = code.splitlines()
         for lineNo, line in enumerate(splitLines):
             if line.startswith(":"):
-                splitLines[lineNo - 1] = splitLines[lineNo - 1] + ":"
+                splitLines[lineNo - 1] = f"{splitLines[lineNo - 1]}:"
                 splitLines[lineNo] = ""
-        newCode = ""
-        for line in splitLines:
-            newCode += line + "\n"
+        newCode = "".join(line + "\n" for line in splitLines)
         code = newCode
 
         splitLines = code.splitlines()
@@ -287,7 +262,7 @@ class Parser:
                 if "#endindent" in splitLines[i]:
                     if not self.IsInString("#endindent", splitLines[i], True):
                         indentCount -= 1
-                    
+
                 elif "#startindent" in splitLines[i] and not self.IsInString("#startindent", splitLines[i], True):
                     if not self.IsInString("#startindent", splitLines[i]):
                         indentCount += 1
@@ -298,12 +273,12 @@ class Parser:
         #Remove indent helpers
         newCode = ""
         for line in code.splitlines():
-            if "#endindent" in line:
-                if not self.IsInString("#endindent", line):
-                    line = line.replace(line, "")
-            if "#startindent" in line:
-                if not self.IsInString("#startindent", line):
-                    line = line.replace(line, "")
+            if "#endindent" in line and not self.IsInString("#endindent", line):
+                line = line.replace(line, "")
+            if "#startindent" in line and not self.IsInString(
+                "#startindent", line
+            ):
+                line = line.replace(line, "")
             newCode += line + "\n"
         code = newCode
 
@@ -332,18 +307,12 @@ if __name__ == "__main__":
         return code
 
     def IsInString(self, phrase : str, line : str, returnIfMultiple = False) -> bool:
-        if not phrase in line:
+        if phrase not in line:
             return False
         if line.count(phrase) > 1:
             return returnIfMultiple
         leftSide = line.partition(phrase)[0]
         if leftSide.count("\"") > 0:
-            if leftSide.count("\"") % 2 == 0:
-                return False
-            else:
-                return True
+            return leftSide.count("\"") % 2 != 0
         if leftSide.count("\'") > 0:
-            if leftSide.count("\'") % 2 == 0:
-                return False
-            else:
-                return True
+            return leftSide.count("\'") % 2 != 0
