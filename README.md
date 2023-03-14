@@ -71,13 +71,13 @@ class Main
 
 class Main
 {
+    #setspace game;
     function mygame()
     {
         // Code here
     }
     function main()
     {
-        #setspace game;
         this.mygame();
     }
 }
