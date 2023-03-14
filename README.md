@@ -66,6 +66,24 @@ class Main
 
 ```
 
+###### Game setup example
+```cpp
+
+class Main
+{
+    function mygame()
+    {
+        // Code here
+    }
+    function main()
+    {
+        #setspace game;
+        this.mygame();
+    }
+}
+
+```
+
 ## !!!NOTICE!!!
 ***EVERY C- file needs to implement a CLASS "Main" to wrap up the code.***
 
